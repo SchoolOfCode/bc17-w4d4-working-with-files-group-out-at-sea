@@ -1,3 +1,4 @@
+import { writeFile } from "node:fs";
 import fs from "node:fs/promises";
 import { v4 as uuidv4 } from "uuid";
 
@@ -11,12 +12,19 @@ async function getQuotes(fileName) {
     } catch (error) {
         console.error('Error reading this file:', error)
     }
-}
- getQuotes('quotes.json');
+};
+getQuotes('quotes.json');
 
-export async function addQuote(quoteText) {
+export async function addQuote(fileName, data) {
+    try{
+        await writeFile(fileName, data, 'utf8');
+        console.log('File written successfully.')
+    } catch{
+        console.error('Error reading this file:', error)
+    }
+};
+addQuote();
 
-}
 
 // export async function getRandomQuote() {
 
