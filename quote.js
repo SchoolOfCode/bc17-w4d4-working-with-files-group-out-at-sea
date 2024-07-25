@@ -1,6 +1,4 @@
-import { readFile } from "node:fs";
 import fs from "node:fs/promises";
-import { get } from "node:http";
 import { v4 as uuidv4 } from "uuid";
 
 const fileName = "quotes.json";
@@ -16,9 +14,9 @@ async function getQuotes(fileName) {
 }
  getQuotes('quotes.json');
 
-// export async function addQuote(quoteText) {
+export async function addQuote(quoteText) {
 
-// }
+}
 
 // export async function getRandomQuote() {
 
